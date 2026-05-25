@@ -1,0 +1,23 @@
+{
+  "pipeline_id": "1187c00e-e560-40b4-89c3-87263de49d9b",
+  "pipeline_name": "demo_ecommerce_orders_pipeline",
+  "catalog": "main",
+  "schema": "demo_sdp",
+  "target": "main.demo_sdp",
+  "volume_path": "/Volumes/main/default/demo_orders",
+  "mode": "CONTINUOUS",
+  "edition": "ADVANCED",
+  "photon": true,
+  "serverless": false,
+  "channel": "CURRENT",
+  "tables": {
+    "bronze": "bronze_orders",
+    "silver": "silver_orders",
+    "gold_users": "gold_daily_user_sales",
+    "gold_products": "gold_product_performance",
+    "cdc_audit": "cdc_audit_log",
+    "cdc_metrics": "cdc_metrics_summary",
+    "quality_metrics": "data_quality_metrics"
+  },
+  "dashboard_id": "01f1497789da16dcb1f180988df882b"
+}
