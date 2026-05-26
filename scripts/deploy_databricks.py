@@ -6,9 +6,9 @@ from databricks.sdk.service.workspace import ImportFormat
 
 ROOT = Path(__file__).resolve().parent.parent
 NOTEBOOKS_DIR = ROOT / "notebooks"
-TARGET_ROOT = "/Repos/SDP_Pipeline_Project/notebooks"
-
 SUPPORTED_EXTENSIONS = {".py", ".ipynb", ".sql", ".scala", ".r"}
+
+DEFAULT_TARGET_ROOT = "/Workspace/Shared/SDP_Pipeline_Project/notebooks"
 
 
 def collect_notebook_files(root_dir: Path):
@@ -20,7 +20,11 @@ def collect_notebook_files(root_dir: Path):
 def import_file(client: WorkspaceClient, local_path: Path, target_root: str):
     relative_path = local_path.relative_to(NOTEBOOKS_DIR)
     target_path = Path(target_root) / relative_path
-    target_path = "/" + "/".join(target_path.parts)
+    target_path = target_path.as_posix()
+
+    parent_dir = os.path.dirname(target_path)
+    if parent_dir and parent_dir != "/":
+        client._workspace.mkdirs(path=parent_dir)
 
     print(f"Uploading {local_path} -> {target_path}")
     with local_path.open("rb") as f:
@@ -46,6 +50,9 @@ def main():
     print("Connecting to Databricks...")
     client = WorkspaceClient()
 
+    target_root = os.environ.get("DATABRICKS_TARGET_ROOT", DEFAULT_TARGET_ROOT)
+    print(f"Deploying notebooks to Databricks target path: {target_root}")
+
     files = list(collect_notebook_files(NOTEBOOKS_DIR))
     if not files:
         print("No notebook files found to deploy.")
@@ -53,7 +60,7 @@ def main():
 
     print(f"Found {len(files)} notebook files to deploy.")
     for path in files:
-        import_file(client, path, TARGET_ROOT)
+        import_file(client, path, target_root)
 
     print("Databricks deployment completed successfully.")
 
