@@ -1,0 +1,7 @@
+{
+  "name": "SDP Default Quality Gate",
+  "conditions": [
+    { "metric": "coverage", "operator": "GREATER_THAN", "value": "80" },
+    { "metric": "bugs", "operator": "LESS_THAN", "value": "1" }
+  ]
+}

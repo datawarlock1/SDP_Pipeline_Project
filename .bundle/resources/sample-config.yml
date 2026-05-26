@@ -1,0 +1,6 @@
+name: sdp-pipeline-config
+version: 1.0
+settings:
+  environment: dev
+  catalog: ecommerce
+  schema: sdp

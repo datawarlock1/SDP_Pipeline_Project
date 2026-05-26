@@ -1,0 +1,6 @@
+deployment:
+  name: sdp_pipeline_bundle
+  artifacts:
+    - .bundle/pipelines.yml
+    - .bundle/resources/sample-config.yml
+    - .bundle/resources/sample-schema.yml

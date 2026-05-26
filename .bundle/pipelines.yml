@@ -1,0 +1,7 @@
+version: 1
+pipelines:
+  - name: sdp_data_pipeline
+    description: Deploy notebooks and jobs for the SDP pipeline
+    notebooks:
+      - source: notebooks
+        target: /Repos/SDP_Pipeline_Project/notebooks

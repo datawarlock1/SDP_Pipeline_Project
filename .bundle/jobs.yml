@@ -1,0 +1,6 @@
+jobs:
+  - name: sdp_pipeline_job
+    type: notebook
+    source: notebooks
+    target: /Repos/SDP_Pipeline_Project/notebooks
+    schedule: none
