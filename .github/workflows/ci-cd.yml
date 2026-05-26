@@ -50,9 +50,12 @@ jobs:
       - name: Copy Sonar properties
         run: cp sonarqube/sonar-project.properties sonar-project.properties
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
         with:
-          organization: "your-organization-key"
-          token: ${{ secrets.SONAR_TOKEN }}
-          projectKey: "SDP_Pipeline_Project"
-          projectName: "SDP Pipeline Project"
+          args: >
+            -Dsonar.organization=datawarlock1
+            -Dsonar.projectKey=SDP_Pipeline_Project
+            -Dsonar.projectName="SDP Pipeline Project"
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
