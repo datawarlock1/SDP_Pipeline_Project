@@ -1,0 +1,4 @@
+workspace:
+  base_path: /Repos/SDP_Pipeline_Project
+  notebooks:
+    - notebooks/SDP Pipeline End-to-End Demo with Monitoring.ipynb

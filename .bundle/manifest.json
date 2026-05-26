@@ -21,8 +21,28 @@
     },
     {
       "type": "resource",
+      "path": ".bundle/jobs.yml",
+      "source": ".bundle/jobs.yml"
+    },
+    {
+      "type": "resource",
+      "path": ".bundle/workspace.yml",
+      "source": ".bundle/workspace.yml"
+    },
+    {
+      "type": "resource",
       "path": ".bundle/resources/sample-config.yml",
       "source": ".bundle/resources/sample-config.yml"
+    },
+    {
+      "type": "resource",
+      "path": ".bundle/resources/sample-schema.yml",
+      "source": ".bundle/resources/sample-schema.yml"
+    },
+    {
+      "type": "resource",
+      "path": ".bundle/resources/metadata.yml",
+      "source": ".bundle/resources/metadata.yml"
     }
   ]
 }
