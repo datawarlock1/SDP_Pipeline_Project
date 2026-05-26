@@ -1,0 +1,9 @@
+schema:
+  name: customer_orders
+  fields:
+    - name: order_id
+      type: string
+    - name: created_at
+      type: timestamp
+    - name: total_amount
+      type: decimal

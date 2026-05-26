@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "datawarlock1",
+        "projectKey": "SDP_Pipeline_Project"
+    }
+}

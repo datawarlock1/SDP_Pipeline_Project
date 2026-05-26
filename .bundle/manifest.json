@@ -8,6 +8,21 @@
       "type": "workspace",
       "path": "/Repos/SDP_Pipeline_Project/notebooks",
       "source": "notebooks"
+    },
+    {
+      "type": "resource",
+      "path": ".bundle/pipelines.yml",
+      "source": ".bundle/pipelines.yml"
+    },
+    {
+      "type": "resource",
+      "path": ".bundle/deployment.yml",
+      "source": ".bundle/deployment.yml"
+    },
+    {
+      "type": "resource",
+      "path": ".bundle/resources/sample-config.yml",
+      "source": ".bundle/resources/sample-config.yml"
     }
   ]
 }
