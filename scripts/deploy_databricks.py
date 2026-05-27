@@ -24,6 +24,7 @@ def import_file(client: WorkspaceClient, local_path: Path, target_root: str):
 
     parent_dir = os.path.dirname(target_path)
     if parent_dir and parent_dir != "/":
+        print(f"Ensuring parent directory exists: {parent_dir}")
         client._workspace.mkdirs(path=parent_dir)
 
     print(f"Uploading {local_path} -> {target_path}")
